@@ -1,0 +1,6 @@
+---
+- name: restart vault
+  tags: vault
+  service: name=vault
+           sleep=10
+           state=restarted
