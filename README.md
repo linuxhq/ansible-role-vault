@@ -57,7 +57,7 @@ Additional variables available, not defined by default:
 
 ## Dependencies
 
- * https://galaxy.ansible.com/tkimball83/tkimball83/
+ * https://galaxy.ansible.com/linuxhq/linuxhq/
 
 ## Example Playbooks
 
