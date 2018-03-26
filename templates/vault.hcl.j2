@@ -1,56 +1,48 @@
-{% if vault_backend is defined %}
-{%   if vault_backend.storage is defined %}
-backend "{{ vault_backend.storage }}" {
-{%     for vkey, vvalue in vault_backend.iteritems()|sort %}
-{%       if vkey != 'storage' %}
-{%         if vvalue == 1 %}
-  {{ vkey }} = 1
-{%         elif vvalue == 0 %}
-  {{ vkey }} = 0
-{%         elif vvalue == True %}
-  {{ vkey }} = true
-{%         elif vvalue == False %}
-  {{ vkey }} = false
-{%         else %}
-  {{ vkey }} = "{{ vvalue }}"
-{%         endif %}
-{%       endif %}
-{%     endfor %}
-}
-{%   endif %}
-{% endif %}
+# {{ ansible_managed }}
 
-{% if vault_listener is defined %}
-listener "tcp" {
-{%   for lkey, lvalue in vault_listener.iteritems()|sort %}
-{%     if lvalue == 1 %}
-  {{ lkey }} = 1
-{%     elif lvalue == 0 %}
-  {{ lkey }} = 0
-{%     elif lvalue == True %}
-  {{ lkey }} = true
-{%     elif lvalue == False %}
-  {{ lkey }} = false
-{%     else %}
-  {{ lkey }} = "{{ lvalue }}"
+{% if vault_backend.storage is defined %}
+backend "{{ vault_backend.storage }}" {
+{%   for vk, vv in vault_backend.iteritems()|sort %}
+{%     if vk != 'storage' %}
+{%       if vv is sameas true %}
+  {{ vk }} = true
+{%       elif vv is sameas false %}
+  {{ vk }} = false
+{%       elif vv is number %}
+  {{ vk }} = {{ vv }}
+{%       else %}
+  {{ vk }} = "{{ vv }}"
+{%       endif %}
 {%     endif %}
 {%   endfor %}
 }
 {% endif %}
 
+listener "tcp" {
+{% for lk, lv in vault_listener.iteritems()|sort %}
+{%   if lv is sameas true %}
+  {{ lk }} = true
+{%   elif lv is sameas false %}
+  {{ lk }} = false
+{%   elif lv is number %}
+  {{ lk }} = {{ lv }}
+{%   else %}
+  {{ lk }} = "{{ lv }}"
+{%   endif %}
+{% endfor %}
+}
+
 {% if vault_telemetry is defined %}
 telemetry {
-{%   for tkey, tvalue in vault_telemetry.iteritems()|sort %}
-{%     if tvalue == 1 %}
-  {{ tkey }} = 1
-{%     elif tvalue == 0 %}
-  {{ tkey }} = 0
-{%     elif tvalue == True %}
-  {{ tkey }} = true
-{%     elif tvalue == False %}
-  {{ tkey }} = false
+{%   for tk, tv in vault_telemetry.iteritems()|sort %}
+{%     if tv is sameas true %}
+  {{ tk }} = true
+{%     elif tv is sameas false %}
+  {{ tk }} = false
+{%     elif tv is number %}
+  {{ tk }} = {{ tv }}
 {%     else %}
-  {{ tkey }} = "{{ tvalue }}"
+  {{ tk }} = "{{ tv }}"
 {%     endif %}
 {%   endfor %}
 }

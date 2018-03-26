@@ -24,34 +24,13 @@ Available variables are listed below, along with default values:
       storage: consul
     vault_listener:
       address: 127.0.0.1:8200
-      tls_disable: '1'
+      tls_disable: 1
+    vault_log_file: /var/log/vault.log
 
 Additional variables available, not defined by default:
 
-    vault_bin: /usr/sbin/vault
-    vault_backend:
-      address: 127.0.0.1:8500
-      max_parallel: 128
-      path: vault
-      scheme: https
-      storage: consul
-      token: xxxxxxxxxx
-      tls_ca_file: /path/to/ca/file
-      tls_cert_file: /path/to/cert/file
-      tls_key_file: /path/to/key/file
-      tls_skip_verify: '1'
-    vault_config_path: /etc/vault/vault.hcl
-    vault_listener:
-      address: 127.0.0.1:8200
-      tls_disable: '1'
-      tls_cert_file: /path/to/cert/file
-      tls_key_file: /path/to/key/file
-      tls_min_version: tls12
-    vault_log_file: /var/log/vault.log
-    vault_log_level: info
-    vault_pid_file: /var/run/vault.pid
     vault_telemetry:
-      disable_hostname: True
+      disable_hostname: true
       statsd_address: 127.0.0.1:8125
       statsite_address: 127.0.0.1:8125
 
@@ -72,7 +51,7 @@ Example playbook with a consul storage backend:
             storage: consul
           vault_listener:
             address: "{{ ansible_default_ipv4.address }}:8200"
-            tls_disable: '0'
+            tls_disable: 1
 
 Example playbook with a mysql storage backend:
 
@@ -88,7 +67,7 @@ Example playbook with a mysql storage backend:
             username: vault
           vault_listener:
             address: "{{ ansible_default_ipv4.address }}:8200"
-            tls_disable: '0'
+            tls_disable: 1
 
 ## Partners
 
@@ -97,11 +76,20 @@ Example playbook with a mysql storage backend:
 Do you need trustworthy hosted package repositories?  Then packagecloud is for you.
 
 A big thank you to packagecloud for supporting the open source community!
-         
+
 ## License
 
-BSD
+Copyright (C) 2018 Taylor Kimball <tkimball@linuxhq.org>
 
-## Author Information
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-This role was created by [Taylor Kimball](http://www.linuxhq.org).
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>. 

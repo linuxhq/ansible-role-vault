@@ -1,8 +1,4 @@
-{% if vault_log_file is defined %}
 {{ vault_log_file }} {
-{% else %}
-/var/log/vault.log {
-{% endif %}
     daily
     missingok
     rotate 7
