@@ -22,10 +22,14 @@ Available variables are listed below, along with default values:
       address: 127.0.0.1:8500
       path: vault
       storage: consul
+    vault_bin: /usr/sbin/vault
+    vault_config_path: /etc/vault/vault.hcl
     vault_listener:
       address: 127.0.0.1:8200
       tls_disable: 1
     vault_log_file: /var/log/vault.log
+    vault_log_level: info
+    vault_pid_file: /var/run/vault.pid
 
 Additional variables available, not defined by default:
 
