@@ -10,5 +10,11 @@ VAULT_LOG_FILE={{ vault_log_file }}
 # Log level for vault server
 VAULT_LOG_LEVEL={{ vault_log_level }}
 
+# Additional opts to pass to vault
+VAULT_OPTS="{{ vault_opts }}"
+
 # Pid file for vault server
 VAULT_PID_FILE={{ vault_pid_file }}
+
+# User for vault to runas
+VAULT_USER={{ vault_user }}
