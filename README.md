@@ -27,10 +27,10 @@ Available variables are listed below, along with default values:
     vault_listener:
       address: 127.0.0.1:8200
       tls_disable: 1
-    vault_log_file: /var/log/vault.log
+    vault_log_file: /var/log/vault/vault.log
     vault_log_level: info
     vault_opts: ''
-    vault_pid_file: /var/run/vault.pid
+    vault_pid_file: /var/run/vault/vault.pid
     vault_user: vault
 
 Additional variables available, not defined by default:
