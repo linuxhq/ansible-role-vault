@@ -73,14 +73,6 @@ Example playbook with a mysql storage backend:
             address: "{{ ansible_default_ipv4.address }}:8200"
             tls_disable: 1
 
-## Partners
-
-[![packagecloud](http://dka575ofm4ao0.cloudfront.net/pages-transactional_logos/retina/10543/gKme3F4XRaC5EyKJzKsA)](https://packagecloud.io)
-
-Do you need trustworthy hosted package repositories?  Then packagecloud is for you.
-
-A big thank you to packagecloud for supporting the open source community!
-
 ## License
 
 Copyright (C) 2018 Taylor Kimball <tkimball@linuxhq.org>
