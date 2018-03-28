@@ -1,7 +1,7 @@
 # ansible-role-vault
 
 [![Build Status](https://travis-ci.org/linuxhq/ansible-role-vault.svg?branch=master)](https://travis-ci.org/linuxhq/ansible-role-vault)
-[![Chat](https://img.shields.io/badge/chat-on%20linuxhq-brightgreen.svg)](ircs://irc.linuxhq.org/linuxhq)
+[![Chat](https://img.shields.io/badge/chat-on%20linuxhq-brightgreen.svg)]
 
 RHEL/CentOS - A tool for managing secrets
 
