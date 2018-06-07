@@ -1,6 +1,8 @@
 # ansible-role-vault
 
 [![Build Status](https://travis-ci.org/linuxhq/ansible-role-vault.svg?branch=master)](https://travis-ci.org/linuxhq/ansible-role-vault)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-vault-blue.svg?style=flat)](https://galaxy.ansible.com/linuxhq/vault)
+[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat)](COPYING)
 
 RHEL/CentOS - A tool for managing secrets
 
