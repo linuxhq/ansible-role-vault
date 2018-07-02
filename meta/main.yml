@@ -2,6 +2,7 @@
 dependencies:
   - linuxhq.linuxhq
 galaxy_info:
+  role_name: vault
   author: tkimball83
   description: RHEL/CentOS - A tool for managing secrets
   license: GPLv3
